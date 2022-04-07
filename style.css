@@ -1,0 +1,87 @@
+body {
+    background: steelblue;
+}
+
+.gauge {
+    background: radial-gradient(circle at 30% 40%, #fff, #fff 20%, #ccc 50%);
+    border: 4px solid #555;
+    border-radius: 999px 999px 0 0;
+    box-shadow: inset 3px 3px 15px rgba(0, 0, 0, 0.8);
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    height: 100px;
+    left: 50%;
+    overflow: hidden;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+}
+
+.gauge:before {
+    content: '';
+    position: absolute;
+    height: 140%;
+    width: 70%;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    border-radius: 50%;
+    border: 4px solid #222;
+    bottom: -80%;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.gauge:after {
+    content: '';
+    position: absolute;
+    height: 75%;
+    width: 3%;
+    background: firebrick;
+    transform-origin: bottom center;
+    left: 50%;
+    bottom: -2%;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+    border-radius: 999px 999px 0px 0px;
+    transform: rotate(8deg);
+    transition: 200ms;
+    animation: gaugeIt 4s linear infinite;
+}
+
+@keyframes gaugeIt {
+    0% {
+        transform: rotate(0deg);
+    }
+    10% {
+        transform: rotate(-20deg);
+    }
+    20% {
+        transform: rotate(14deg);
+    }
+    30% {
+        transform: rotate(33deg);
+    }
+    40% {
+        transform: rotate(-54deg);
+    }
+    50% {
+        transform: rotate(21deg);
+    }
+    60% {
+        transform: rotate(8deg);
+    }
+    70% {
+        transform: rotate(-28deg);
+    }
+    80% {
+        transform: rotate(23deg);
+    }
+    90% {
+        transform: rotate(76deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
